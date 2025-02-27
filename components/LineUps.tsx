@@ -3,12 +3,12 @@
 import { useMemo } from 'react';
 import grenades from '@/data/grenades';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { NadeType, Side } from '@/data/types';
+import { Type, Side } from '@/data/types';
 
 interface LineUpsProps {
   map: string;
   side: Side;
-  nade: NadeType;
+  nade: Type;
 }
 const getYouTubeEmbedUrl = (url: string) => {
   const videoId = url.split('/').pop()?.split('?')[0];
