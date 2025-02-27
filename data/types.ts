@@ -1,8 +1,11 @@
+export type Type = 'smoke' | 'he' | 'flash' | 'fire' | 'combo' | 'прострел';
+export type Side = 'ct' | 't';
+
 export interface Grenade {
-  type: string;
+  type: Type;
   description: string;
   videoUrl: string;
-  side: "ct" | "t"
+  side: Side
 }
 
 export interface MapData {

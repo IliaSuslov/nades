@@ -15,6 +15,8 @@ export function NadesWithFilters({ map }: { map: string }) {
             <TabsTrigger value="he">HE</TabsTrigger>
             <TabsTrigger value="fire">Fire</TabsTrigger>
             <TabsTrigger value="flash">Flash</TabsTrigger>
+            <TabsTrigger value="combo">Combo</TabsTrigger>
+            <TabsTrigger value="прострел">Прострел</TabsTrigger>
           </TabsList>
           <TabsContent value="smoke">
             <LineUps map={map as string} nade={'smoke'} side={'ct'} />
@@ -28,6 +30,12 @@ export function NadesWithFilters({ map }: { map: string }) {
           <TabsContent value="flash">
             <LineUps map={map as string} nade={'flash'} side={'ct'} />
           </TabsContent>
+          <TabsContent value="combo">
+            <LineUps map={map as string} nade={'combo'} side={'ct'} />
+          </TabsContent>
+          <TabsContent value="прострел">
+            <LineUps map={map as string} nade={'прострел'} side={'ct'} />
+          </TabsContent>
         </Tabs>
       </TabsContent>
       <TabsContent value="t">
@@ -37,6 +45,8 @@ export function NadesWithFilters({ map }: { map: string }) {
             <TabsTrigger value="he">HE</TabsTrigger>
             <TabsTrigger value="fire">Fire</TabsTrigger>
             <TabsTrigger value="flash">Flash</TabsTrigger>
+            <TabsTrigger value="combo">Combo</TabsTrigger>
+            <TabsTrigger value="прострел">Прострел</TabsTrigger>
           </TabsList>
           <TabsContent value="smoke">
             <LineUps map={map as string} nade={'smoke'} side={'t'} />
@@ -49,6 +59,12 @@ export function NadesWithFilters({ map }: { map: string }) {
           </TabsContent>
           <TabsContent value="flash">
             <LineUps map={map as string} nade={'flash'} side={'t'} />
+          </TabsContent>
+          <TabsContent value="combo">
+            <LineUps map={map as string} nade={'combo'} side={'t'} />
+          </TabsContent>
+          <TabsContent value="прострел">
+            <LineUps map={map as string} nade={'прострел'} side={'t'} />
           </TabsContent>
         </Tabs>
       </TabsContent>
