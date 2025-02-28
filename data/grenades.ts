@@ -284,6 +284,76 @@ const grenades: MapData[] = [
         videoUrl: "https://youtu.be/W7Qtk8x3S24?t=1860"
       },
     ]
+  }, {
+    map: "Nuke",
+    grenades: [
+      {
+        side: "t",
+        type: "combo",
+        description: "[Outside] стена смоков на проход в сикрет",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=9"
+      },
+      {
+        side: "t",
+        type: "combo",
+        description: "[Outside] стена смоков (альтернатива)",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=33"
+      },
+      {
+        side: "t",
+        type: "smoke",
+        description: "[Outside] гараж",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=54"
+      },
+      {
+        side: "t",
+        type: "smoke",
+        description: "[Outside] между серым конт-ом и зданием",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=84"
+      },
+      {
+        side: "t",
+        type: "smoke",
+        description: "[A] 9 со скалы",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=114"
+      },
+      {
+        side: "t",
+        type: "smoke",
+        description: "[A] перед мейном для спрыга в вент",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=1474"
+      },
+      {
+        side: "t",
+        type: "smoke",
+        description: "[Outside] топ мейн",
+        videoUrl: "https://youtu.be/6_WAimVYF0I?t=199"
+      },
+      {
+        side: "t",
+        type: "fire",
+        description: "[A] на будку",
+        videoUrl: "https://youtu.be/6_WAimVYF0I?t=414"
+      },
+      {
+        side: "t",
+        type: "combo",
+        description: "[A] заход",
+        videoUrl: "https://youtu.be/6_WAimVYF0I?t=484"
+      },
+      {
+        side: "ct",
+        type: "fire",
+        description: "[Outside] в начало на выход теров",
+        videoUrl: "https://youtu.be/6_WAimVYF0I?t=782"
+      },
+      {
+        side: "ct",
+        type: "flash",
+        description: "[A] c 9 на ритейк",
+        videoUrl: "https://youtu.be/6_WAimVYF0I?t=1020"
+      },
+    ]
   }
 ];
 
