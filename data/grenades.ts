@@ -359,7 +359,7 @@ const grenades: MapData[] = [
     map: "Anubis",
     grenades: [
       {
-        type: "smoke",
+        type: "fire",
         side: "t",
         description: "[Mid] двери",
         videoUrl: "https://youtu.be/SWlsYC_bAlo?t=49"
