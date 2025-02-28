@@ -354,6 +354,83 @@ const grenades: MapData[] = [
         videoUrl: "https://youtu.be/6_WAimVYF0I?t=1020"
       },
     ]
+  },
+  {
+    map: "Anubis",
+    grenades: [
+      {
+        type: "smoke",
+        side: "t",
+        description: "[Mid] двери",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=49"
+      },
+      {
+        type: "smoke",
+        side: "t",
+        description: "[B] кон",
+        videoUrl: "https://youtu.be/FWJFU3SAYGY"
+      },
+      {
+        type: "smoke",
+        side: "t",
+        description: "[A] люрк смок на выход",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=140"
+      },
+      {
+        type: "smoke",
+        side: "t",
+        description: "[A] люрк смок на выход",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=140"
+      },
+      {
+        type: "combo",
+        side: "t",
+        description: "[A] на выход из кон-ра",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=170"
+      },
+      {
+        type: "smoke",
+        side: "t",
+        description: "[A] слева от сайта",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=228"
+      },
+      {
+        type: "smoke",
+        side: "t",
+        description: "[A] темл",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=256"
+      },
+      {
+        type: "smoke",
+        side: "t",
+        description: "[A] темл(фейк)",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=320"
+      },
+      {
+        type: "fire",
+        side: "t",
+        description: "[A] за колонну",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=453"
+      },
+      {
+        type: "flash",
+        side: "t",
+        description: "[A] на заход в кон",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=482"
+      },
+      {
+        type: "smoke",
+        side: "ct",
+        description: "[B] на занятие мейна",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=652"
+      },
+      {
+        type: "combo",
+        side: "ct",
+        description: "занятие воды",
+        videoUrl: "https://youtu.be/SWlsYC_bAlo?t=784"
+      },
+    ]
   }
 ];
 
