@@ -105,11 +105,11 @@ const Home: FC = async () => {
         <div className="max-w-3xl mx-auto space-y-4">
           {successfulPlayers.map((result, index) => (
             <div key={result.value.player_id}>
-              {index == 3 && (
+              {index > 3 && (
                 <div className="flex flex-col items-center py-4">
                   <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 rounded-full border border-red-500/20 backdrop-blur-sm">
                     <p className="text-red-400 font-bold tracking-wider uppercase text-sm">
-                      Нелюди
+                      Нелюдь
                     </p>
                     <ArrowBigDown className="text-red-400 w-5 h-5 animate-bounce" />
                   </div>
