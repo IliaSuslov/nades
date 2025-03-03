@@ -8,12 +8,36 @@ const FACEIT_API_KEY = process.env.NEXT_PUBLIC_FACEIT_API_KEY;
 const FACEIT_API_URL = process.env.NEXT_FACEIT_API_URL;
 const CACHE_REVALIDATION_TIME = 600; // 10 minutes
 
-const playerIds = [
-  '6b35340a-aedd-4fe0-be66-f50390e4bdbc',
-  'c81c775e-6795-4caa-b078-f13425c27247',
-  '81fb8e76-1ef3-4050-9a57-04b878870b9e',
-  '7d7073cd-5b10-4c54-8ffc-bfd8c18b47bd',
-  'eb7edbcb-3df5-448c-8ab1-22996b2a79c9',
+const team = [
+  {
+    id: '6b35340a-aedd-4fe0-be66-f50390e4bdbc',
+    badges: [],
+  },
+  {
+    id: 'c81c775e-6795-4caa-b078-f13425c27247',
+    badges: [
+      {
+        label: 'потато пкшер',
+        icon: (
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+          </svg>
+        ),
+      },
+    ],
+  },
+  {
+    id: '81fb8e76-1ef3-4050-9a57-04b878870b9e',
+    badges: [],
+  },
+  {
+    id: '7d7073cd-5b10-4c54-8ffc-bfd8c18b47bd',
+    badges: [],
+  },
+  {
+    id: 'eb7edbcb-3df5-448c-8ab1-22996b2a79c9',
+    badges: [],
+  },
 ];
 
 async function getFaceitPlayer(id: string): Promise<FaceitPlayer> {
@@ -65,7 +89,7 @@ const Home: FC = async () => {
 
   try {
     players = await Promise.allSettled(
-      playerIds.map(id => getFaceitPlayer(id))
+      team.map(({ id }) => getFaceitPlayer(id))
     );
   } catch (error) {
     console.error('Failed to fetch players:', error);
@@ -116,7 +140,11 @@ const Home: FC = async () => {
                   <div className="w-full h-px bg-gradient-to-r from-transparent via-red-500/20 to-transparent mt-4" />
                 </div>
               )}
-              <FaceitPlayerCard player={result.value} rank={index + 1} />
+              <FaceitPlayerCard
+                player={result.value}
+                rank={index + 1}
+                team={team}
+              />
             </div>
           ))}
         </div>
