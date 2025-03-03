@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { FaceitPlayerCard } from '@/components/FaceitPlayerCard';
 import { ErrorMessage } from '@/components/ErrorMessage';
 import { FaceitPlayer } from '@/data/types';
+import { ArrowBigDown } from 'lucide-react';
 
 const FACEIT_API_KEY = process.env.NEXT_PUBLIC_FACEIT_API_KEY;
 const FACEIT_API_URL = process.env.NEXT_FACEIT_API_URL;
@@ -72,10 +73,13 @@ const Home: FC = async () => {
   }
 
   const successfulPlayers = players
-    .filter((result): result is PromiseFulfilledResult<FaceitPlayer> => 
-      result.status === 'fulfilled'
+    .filter(
+      (result): result is PromiseFulfilledResult<FaceitPlayer> =>
+        result.status === 'fulfilled'
     )
-    .sort((a, b) => b.value.games.cs2.faceit_elo - a.value.games.cs2.faceit_elo);
+    .sort(
+      (a, b) => b.value.games.cs2.faceit_elo - a.value.games.cs2.faceit_elo
+    );
 
   const failedPlayersCount = players.length - successfulPlayers.length;
 
@@ -90,7 +94,7 @@ const Home: FC = async () => {
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             Моя команда (помогите)
           </h1>
-          
+
           {failedPlayersCount > 0 && (
             <p className="text-yellow-400 text-sm">
               {`Warning: Failed to load ${failedPlayersCount} player(s)`}
@@ -100,11 +104,20 @@ const Home: FC = async () => {
 
         <div className="max-w-3xl mx-auto space-y-4">
           {successfulPlayers.map((result, index) => (
-            <FaceitPlayerCard
-              key={result.value.player_id}
-              player={result.value}
-              rank={index + 1}
-            />
+            <div key={result.value.player_id}>
+              {index == 3 && (
+                <div className="flex flex-col items-center py-4">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 rounded-full border border-red-500/20 backdrop-blur-sm">
+                    <p className="text-red-400 font-bold tracking-wider uppercase text-sm">
+                      Нелюди
+                    </p>
+                    <ArrowBigDown className="text-red-400 w-5 h-5 animate-bounce" />
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-red-500/20 to-transparent mt-4" />
+                </div>
+              )}
+              <FaceitPlayerCard player={result.value} rank={index + 1} />
+            </div>
           ))}
         </div>
       </div>
