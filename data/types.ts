@@ -12,3 +12,27 @@ export interface MapData {
   map: string;
   grenades: Grenade[];
 } 
+
+export interface FaceitPlayer {
+  player_id: string;
+  nickname: string;
+  avatar: string;
+  country: string;
+  games: {
+    cs2: {
+      faceit_elo: number;
+      skill_level: number;
+    };
+  };
+}
+
+export interface PromiseFulfilledResult<T> {
+  status: 'fulfilled';
+  value: T;
+}
+
+export interface PromiseRejectedResult {
+  status: 'rejected';
+}
+
+export type PromiseSettledResult<T> = PromiseFulfilledResult<T> | PromiseRejectedResult;

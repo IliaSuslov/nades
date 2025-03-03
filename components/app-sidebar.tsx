@@ -19,7 +19,10 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel>
             <div className="flex gap-2 items-center text-xl font-bold">
-              [IS]Nades <ModeToggle />
+              <Link href={'/'} className="block">
+                [IS]Nades
+              </Link>
+              <ModeToggle />
             </div>
           </SidebarGroupLabel>
           <SidebarGroupContent className="mt-4">
