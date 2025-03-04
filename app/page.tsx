@@ -2,7 +2,9 @@ import { FC } from 'react';
 import { FaceitPlayerCard } from '@/components/FaceitPlayerCard';
 import { ErrorMessage } from '@/components/ErrorMessage';
 import { FaceitPlayer } from '@/data/types';
-import { ArrowBigDown } from 'lucide-react';
+import { FaWheelchair, FaArrowDown, FaRegSadCry } from 'react-icons/fa';
+import { FaRegTrashCan } from 'react-icons/fa6';
+import { GiPitchfork, GiStrong } from 'react-icons/gi';
 
 const FACEIT_API_KEY = process.env.NEXT_PUBLIC_FACEIT_API_KEY;
 const FACEIT_API_URL = process.env.NEXT_FACEIT_API_URL;
@@ -10,33 +12,57 @@ const CACHE_REVALIDATION_TIME = 600; // 10 minutes
 
 const team = [
   {
+    // dtm
     id: '6b35340a-aedd-4fe0-be66-f50390e4bdbc',
-    badges: [],
-  },
-  {
-    id: 'c81c775e-6795-4caa-b078-f13425c27247',
     badges: [
       {
-        label: 'потато пкшер',
-        icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
-          </svg>
-        ),
+        label: 'кач',
+        icon: <GiStrong className="w-5 h-5" />,
       },
     ],
   },
   {
+    // fbgod
+    id: 'c81c775e-6795-4caa-b078-f13425c27247',
+    badges: [
+      {
+        label: 'потато пкшер',
+        icon: <FaRegTrashCan className="w-5 h-5" />,
+      },
+      {
+        label: 'кач',
+        icon: <GiStrong className="w-5 h-5" />,
+      },
+    ],
+  },
+  {
+    // Amision
     id: '81fb8e76-1ef3-4050-9a57-04b878870b9e',
-    badges: [],
+    badges: [{ label: 'нытик', icon: <FaRegSadCry className="w-5 h-5" /> }],
   },
   {
+    // Johnny
     id: '7d7073cd-5b10-4c54-8ffc-bfd8c18b47bd',
-    badges: [],
+    badges: [
+      {
+        label: 'на руле',
+        icon: <FaWheelchair className="animate-spin w-5 h-5" />,
+      },
+      {
+        label: 'хохол',
+        icon: <GiPitchfork className="animate-bounce w-5 h-5" />,
+      },
+    ],
   },
   {
+    // хабиби
     id: 'eb7edbcb-3df5-448c-8ab1-22996b2a79c9',
-    badges: [],
+    badges: [
+      {
+        label: 'потато пкшер',
+        icon: <FaRegTrashCan className="w-5 h-5" />,
+      },
+    ],
   },
 ];
 
@@ -112,10 +138,10 @@ const Home: FC = async () => {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
+    <main className="min-h-screen bg-gradient-to-br from-orange-900 via-gray-900 to-orange-900 text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
             Моя команда (помогите)
           </h1>
 
@@ -135,9 +161,9 @@ const Home: FC = async () => {
                     <p className="text-red-400 font-bold tracking-wider uppercase text-sm">
                       Нелюдь
                     </p>
-                    <ArrowBigDown className="text-red-400 w-5 h-5 animate-bounce" />
+                    <FaArrowDown className="text-red-400 w-5 h-5 animate-bounce" />
                   </div>
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-red-500/20 to-transparent mt-4" />
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent mt-4" />
                 </div>
               )}
               <FaceitPlayerCard

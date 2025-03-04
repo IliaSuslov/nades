@@ -16,7 +16,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
   return (
     <div className="flex items-center gap-6 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300 border border-white/10">
       {/* Rank Circle */}
-      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-blue-500 text-white font-bold text-xl">
+      <div className="flex items-center justify-center text-white font-bold text-xl">
         {rank}
       </div>
 
