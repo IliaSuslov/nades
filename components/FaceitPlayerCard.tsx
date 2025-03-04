@@ -75,7 +75,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
         </div>
         <div className="flex items-center gap-2 text-white/70">
           <span className="text-sm">ELO:</span>
-          <span className="font-mono font-bold text-white">
+          <span className="font-bold text-white">
             {player.games.cs2.faceit_elo}
           </span>
         </div>

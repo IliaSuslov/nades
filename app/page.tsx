@@ -5,7 +5,8 @@ import { FaceitPlayer } from '@/data/types';
 import { FaWheelchair, FaArrowDown, FaRegSadCry } from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import { GiPitchfork, GiStrong } from 'react-icons/gi';
-import { MdSignalWifiConnectedNoInternet0 } from 'react-icons/md';
+
+import { WiFiIcon } from '@/components/WiFiIcon';
 
 const FACEIT_API_KEY = process.env.NEXT_PUBLIC_FACEIT_API_KEY;
 const FACEIT_API_URL = process.env.NEXT_FACEIT_API_URL;
@@ -22,7 +23,7 @@ const team = [
       },
       {
         label: 'wi-fi enjoyer',
-        icon: <MdSignalWifiConnectedNoInternet0 className="w-5 h-5" />,
+        icon: <WiFiIcon />
       },
     ],
   },
@@ -55,7 +56,7 @@ const team = [
       },
       {
         label: 'хохол',
-        icon: <GiPitchfork className="animate-bounce w-5 h-5" />,
+        icon: <GiPitchfork className="w-5 h-5" />,
       },
     ],
   },
@@ -120,7 +121,7 @@ async function getFaceitPlayer(id: string): Promise<FaceitPlayer> {
 
 const Home: FC = async () => {
   let players: PromiseSettledResult<FaceitPlayer>[] = [];
-  
+
   try {
     players = await Promise.allSettled(
       team.map(({ id }) => getFaceitPlayer(id))
