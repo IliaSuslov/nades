@@ -21,14 +21,14 @@ export function WiFiIcon() {
 
   switch (stage) {
     case 4:
-      return <MdSignalWifiStatusbar4Bar className="w-8 h-8" />;
+      return <MdSignalWifiStatusbar4Bar className="w-5 h-5" />;
     case 3:
-      return <MdSignalWifiStatusbar3Bar className="w-8 h-8" />;
+      return <MdSignalWifiStatusbar3Bar className="w-5 h-5" />;
     case 2:
-      return <MdSignalWifiStatusbar2Bar className="w-8 h-8" />;
+      return <MdSignalWifiStatusbar2Bar className="w-5 h-5" />;
     case 1:
-      return <MdSignalWifiStatusbar1Bar className="w-8 h-8" />;
+      return <MdSignalWifiStatusbar1Bar className="w-5 h-5" />;
     default:
-      return <MdSignalWifiConnectedNoInternet0 className="w-8 h-8" />;
+      return <MdSignalWifiConnectedNoInternet0 className="w-5 h-5" />;
   }
 }
