@@ -29,8 +29,39 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
           height={56}
           className="rounded-full border-2 border-white/10"
         />
-        <div className="absolute -bottom-1 -right-1 w-6 h-6 flex items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-xs font-bold text-white">
-          {player.games.cs2.skill_level}
+        <div className="absolute -bottom-1.5 -right-1.5">
+          <div className="relative w-8 h-8">
+            {/* Dark background */}
+            <div className="absolute inset-0 rounded-full bg-[#1F1F22] border border-[#2E2E35]" />
+
+            {/* Progress Circle */}
+            <svg
+              className="absolute inset-0 w-8 h-8 rotate-[145deg]"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                strokeWidth="2.5"
+                stroke="currentColor"
+                className='text-red-600'
+                strokeDasharray={`${
+                  (player.games.cs2.skill_level / 10) * 62.83
+                } 62.83`}
+                strokeLinecap="round"
+                strokeDashoffset="20"
+              />
+            </svg>
+
+            {/* Level Number */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-sm font-bold text-red-600">
+                {player.games.cs2.skill_level}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -52,7 +83,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
       <div className="flex flex-col">
         <div className="flex gap-2">
           {team
-            .find(({ id }: {id: string}) => id === player.player_id)
+            .find(({ id }: { id: string }) => id === player.player_id)
             ?.badges?.map(
               (
                 badge: { icon: React.ReactNode; label: string },
