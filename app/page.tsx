@@ -120,7 +120,7 @@ async function getFaceitPlayer(id: string): Promise<FaceitPlayer> {
 
 const Home: FC = async () => {
   let players: PromiseSettledResult<FaceitPlayer>[] = [];
-
+  
   try {
     players = await Promise.allSettled(
       team.map(({ id }) => getFaceitPlayer(id))
@@ -146,7 +146,7 @@ const Home: FC = async () => {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-900 via-gray-900 to-orange-900 text-white">
+    <main className="min-h-full bg-gradient-to-br from-orange-900 via-gray-900 to-orange-900 text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
