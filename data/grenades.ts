@@ -101,6 +101,12 @@ const grenades: MapData[] = [
         videoUrl: "https://youtu.be/W7Qtk8x3S24?t=912",
       },
       {
+        side: 't',
+        type: "flash",
+        description: "[Mid] на отпик с шорта",
+        videoUrl: "https://www.youtube.com/shorts/Z1Gem8Obizc",
+      },
+      {
         side: 'ct',
         type: "he",
         description: "[Mid] развей смока",
@@ -430,6 +436,29 @@ const grenades: MapData[] = [
         description: "занятие воды",
         videoUrl: "https://youtu.be/SWlsYC_bAlo?t=784"
       },
+    ]
+  },
+  {
+    map: "Inferno",
+    grenades: [
+      {
+        type: 'combo',
+        side: 't',
+        description: '[B] смоки гробы + кт',
+        videoUrl: 'https://www.youtube.com/shorts/txNcCWZf1Zo'
+      },
+      {
+        type: 'fire',
+        side: 't',
+        description: '[B] моли 1 + 2',
+        videoUrl: 'https://www.youtube.com/shorts/zNIMDSFb7XY'
+      },
+      {
+        type: 'fire',
+        side: 't',
+        description: '[B] моли 3',
+        videoUrl: 'https://www.youtube.com/shorts/9R4QPvqm8PI'
+      }
     ]
   }
 ];
