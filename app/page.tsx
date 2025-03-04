@@ -5,7 +5,7 @@ import { FaceitPlayer } from '@/data/types';
 import { FaWheelchair, FaArrowDown, FaRegSadCry } from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import { GiPitchfork, GiStrong } from 'react-icons/gi';
-import { MdSignalWifiConnectedNoInternet0 } from "react-icons/md";
+import { MdSignalWifiConnectedNoInternet0 } from 'react-icons/md';
 
 const FACEIT_API_KEY = process.env.NEXT_PUBLIC_FACEIT_API_KEY;
 const FACEIT_API_URL = process.env.NEXT_FACEIT_API_URL;
@@ -66,6 +66,9 @@ const team = [
       {
         label: 'потато пкшер',
         icon: <FaRegTrashCan className="w-5 h-5" />,
+      },
+      {
+        label: 'z-патриот',
       },
     ],
   },

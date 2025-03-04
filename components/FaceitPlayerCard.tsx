@@ -5,7 +5,7 @@ import { FC, ReactNode } from 'react';
 interface FaceitPlayerCardProps {
   player: FaceitPlayer;
   rank: number;
-  team: { id: string; badges: { label: string; icon: ReactNode }[] }[];
+  team: { id: string; badges: { label: string; icon?: ReactNode }[] }[];
 }
 
 export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
@@ -86,7 +86,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
             .find(({ id }: { id: string }) => id === player.player_id)
             ?.badges?.map(
               (
-                badge: { icon: React.ReactNode; label: string },
+                badge: { icon?: React.ReactNode; label: string },
                 index: number
               ) => (
                 <span
@@ -102,7 +102,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
                   hover:border-red-500/40
                   hover:scale-105"
                 >
-                  {badge.icon}
+                  {badge.icon && badge.icon}
                   {badge.label.toUpperCase()}
                 </span>
               )
