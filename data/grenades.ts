@@ -343,6 +343,12 @@ const grenades: MapData[] = [
       },
       {
         side: "t",
+        type: "combo",
+        description: "3 смока [Outside] top-main и стена",
+        videoUrl: "https://vk.com/video-29058375_456247575"
+      },
+      {
+        side: "t",
         type: "smoke",
         description: "[Outside] гараж",
         videoUrl: "https://youtu.be/4UObn0ss2ds?t=54"
