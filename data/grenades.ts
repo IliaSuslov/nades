@@ -174,7 +174,7 @@ const grenades: MapData[] = [
       {
         side: 'ct',
         type: "smoke",
-        description: "[A main from ct spawn(100)",
+        description: "[A] main с кт спавна(100)",
         videoUrl: "https://youtu.be/Y8PSFoUXNgE?t=411",
       },
     ],
