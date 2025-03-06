@@ -307,6 +307,12 @@ const grenades: MapData[] = [
       },
       {
         side: "t",
+        type: "combo",
+        description: "[Outside] стена смоков (альтернатива)",
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=33"
+      },
+      {
+        side: "t",
         type: "smoke",
         description: "[Outside] гараж",
         videoUrl: "https://youtu.be/4UObn0ss2ds?t=54"
@@ -327,7 +333,7 @@ const grenades: MapData[] = [
         side: "t",
         type: "smoke",
         description: "[A] перед мейном для спрыга в вент",
-        videoUrl: "https://youtu.be/4UObn0ss2ds?t=1474"
+        videoUrl: "https://youtu.be/4UObn0ss2ds?t=145"
       },
       {
         side: "t",
@@ -399,6 +405,12 @@ const grenades: MapData[] = [
         side: "t",
         description: "[A] слева от сайта",
         videoUrl: "https://youtu.be/SWlsYC_bAlo?t=228"
+      },
+      {
+        type: "combo",
+        side: "t",
+        description: "Mid + Con со спавна",
+        videoUrl: "https://www.youtube.com/watch?v=MRZ4u2YoMhQ&ab_channel=CSTactics"
       },
       {
         type: "smoke",
