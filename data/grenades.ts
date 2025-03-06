@@ -344,7 +344,7 @@ const grenades: MapData[] = [
       {
         side: "t",
         type: "combo",
-        description: "3 смока [Outside] top-main и стена",
+        description: "[Outside] 3 смока top-main и стена",
         videoUrl: "https://vk.com/video-29058375_456247575"
       },
       {
