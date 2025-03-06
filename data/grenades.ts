@@ -307,12 +307,6 @@ const grenades: MapData[] = [
       },
       {
         side: "t",
-        type: "combo",
-        description: "[Outside] стена смоков (альтернатива)",
-        videoUrl: "https://youtu.be/4UObn0ss2ds?t=33"
-      },
-      {
-        side: "t",
         type: "smoke",
         description: "[Outside] гараж",
         videoUrl: "https://youtu.be/4UObn0ss2ds?t=54"
