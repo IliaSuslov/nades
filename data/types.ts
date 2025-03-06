@@ -6,6 +6,7 @@ export interface Grenade {
   description: string;
   videoUrl: string;
   side: Side
+  vidType?: 'vk'
 }
 
 export interface MapData {

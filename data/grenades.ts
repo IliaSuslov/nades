@@ -345,7 +345,8 @@ const grenades: MapData[] = [
         side: "t",
         type: "combo",
         description: "[Outside] 3 смока top-main и стена",
-        videoUrl: "https://vk.com/video-29058375_456247575"
+        videoUrl: "https://vk.com/video_ext.php?oid=-29058375&id=456247575&hash=8d3f1cf45956cbbe&muted=1",
+        vidType: "vk"
       },
       {
         side: "t",

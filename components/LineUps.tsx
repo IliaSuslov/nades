@@ -10,10 +10,15 @@ interface LineUpsProps {
   side: Side;
   nade: Type;
 }
-const getYouTubeEmbedUrl = (url: string) => {
+const getYouTubeEmbedUrl = (url: string, type?: 'vk') => {
+  if (type === 'vk') {
+    return url;
+  }
+
   const videoId = url.split('/').pop()?.split('?')[0];
   const timeMatch = url.match(/t=(\d+)/);
   const startTime = timeMatch ? timeMatch[1] : 0;
+
   return `https://www.youtube.com/embed/${videoId}?start=${startTime}&mute=1`;
 };
 export function LineUps({ map, side, nade }: LineUpsProps) {
@@ -40,7 +45,7 @@ export function LineUps({ map, side, nade }: LineUpsProps) {
             <CardContent>
               <iframe
                 className="w-full h-full aspect-video"
-                src={getYouTubeEmbedUrl(grenade.videoUrl)}
+                src={getYouTubeEmbedUrl(grenade.videoUrl, grenade.vidType)}
                 title={grenade.type}
                 allowFullScreen
               />
