@@ -45,7 +45,7 @@ export function LineUps({ map, side, nade }: LineUpsProps) {
             <CardContent>
               <iframe
                 className="w-full h-full aspect-video"
-                src={getYouTubeEmbedUrl(grenade.videoUrl, grenade.vidType)}
+                src={getYouTubeEmbedUrl(grenade.videoUrl)}
                 title={grenade.type}
                 allowFullScreen
               />
