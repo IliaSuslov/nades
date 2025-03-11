@@ -9,10 +9,22 @@ export interface Grenade {
   vidType?: 'vk'
 }
 
+export interface Nade {
+  id: number;
+  coords: { lineUps: [number, number]; cloud: [number, number] };
+  description: string;
+  side: 't' | 'ct';
+  type: 'smoke' | 'fire' | 'flash' | 'he';
+  videoUrl: string;
+}
+
 export interface MapData {
-  map: string;
-  grenades: Grenade[];
-} 
+  spawns: {
+      coords: [number, number];
+      icon: string;
+  }[]
+  nades: Nade[];
+}
 
 export interface FaceitPlayer {
   player_id: string;

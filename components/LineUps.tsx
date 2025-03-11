@@ -10,7 +10,7 @@ interface LineUpsProps {
   side: Side;
   nade: Type;
 }
-const getYouTubeEmbedUrl = (url: string, type?: 'vk') => {
+export const getYouTubeEmbedUrl = (url: string, type?: 'vk') => {
   if (type === 'vk') {
     return url;
   }

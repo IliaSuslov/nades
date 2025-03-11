@@ -1,6 +1,4 @@
-import { MapData } from './types';
-
-const grenades: MapData[] = [
+const grenades = [
   {
     map: "Dust II",
     grenades: [
