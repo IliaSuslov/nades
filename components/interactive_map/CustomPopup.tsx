@@ -3,6 +3,7 @@
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import { getYouTubeEmbedUrl } from '../LineUps';
+import { Card } from '../ui/card';
 
 interface CustomPopupProps {
   description: string;
@@ -40,7 +41,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
         zIndex: 1000,
       }}
     >
-      <div className="flex flex-col gap-2 bg-slate-100 rounded-md p-2">
+      <Card className="flex flex-col gap-2 rounded-md p-2">
         <b>{description}</b>
         <iframe
           width="400"
@@ -48,7 +49,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
           src={getYouTubeEmbedUrl(videoUrl)}
           allowFullScreen
         />
-      </div>
+      </Card>
     </div>,
     document.body
   );
