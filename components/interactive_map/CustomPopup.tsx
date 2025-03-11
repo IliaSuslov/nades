@@ -15,7 +15,6 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
   description,
   videoUrl,
   position,
-  buttons,
   onClose,
 }) => {
   useEffect(() => {
