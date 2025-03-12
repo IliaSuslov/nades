@@ -223,12 +223,14 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
                   position={nade.coords.lineUps}
                   icon={getIcon(nade.type)}
                   eventHandlers={{
-                    mouseover: () =>
+                    mouseover: () => {
                       handleNadeMouseOver(
                         nade.coords.lineUps,
                         nade.description,
                         nade.videoUrl
-                      ),
+                      );
+                      console.log(nade.id);
+                    },
                   }}
                   zIndexOffset={1000}
                 />

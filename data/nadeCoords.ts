@@ -121,6 +121,135 @@ export const nades: Record<string, MapData> = {
             },
         ]
     },
+    'anubis': {
+        spawns: [
+            { coords: [9, 48], icon: '/images/t.png' },
+            { coords: [78, 43], icon: '/images/ct.png' }
+        ],
+        nades: [
+            {
+                id: 1,
+                coords: { lineUps: [6, 53], cloud: [52, 51] },
+                description: '[Mid] окно [Jump + Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/MRZ4u2YoMhQ?t=2'
+            },
+            {
+                id: 2,
+                coords: { lineUps: [24, 67], cloud: [40, 42] },
+                description: '[B] connector [Jump + Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/FWJFU3SAYGY'
+            },
+            {
+                id: 3,
+                coords: { lineUps: [32, 29], cloud: [53, 30] },
+                description: '[B] CT [Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=228'
+            },
+            {
+                id: 4,
+                coords: { lineUps: [29, 31], cloud: [58, 35] },
+                description: '[B] Temple [Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=256'
+            },
+            {
+                id: 5,
+                coords: { lineUps: [32, 29], cloud: [44, 33.5] },
+                description: '[B] за колонну перед коном [Jump + Throw]',
+                side: 't',
+                type: 'fire',
+                videoUrl: ''
+            },
+            {
+                id: 6,
+                coords: { lineUps: [36, 48], cloud: [47.5, 56.5] },
+                description: '[Mid] двери [Throw]',
+                side: 't',
+                type: 'fire',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=49'
+            },
+            {
+                id: 7,
+                coords: { lineUps: [49, 75], cloud: [68, 68] },
+                description: '[A] 8 [Throw]',
+                side: 't',
+                type: 'fire',
+                videoUrl: 'https://youtu.be/H7pblhmqWHs?t=25'
+            },
+            {
+                id: 8,
+                coords: { lineUps: [49.5, 73], cloud: [79, 72] },
+                description: '[A] 9 [Jump + Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/YppqNLtB1Lw?t=47'
+            },
+            {
+                id: 9,
+                coords: { lineUps: [49, 75], cloud: [62, 63] },
+                description: '[A] Камера [Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/YppqNLtB1Lw?t=57'
+            },
+            {
+                id: 10,
+                coords: { lineUps: [18, 34], cloud: [47, 26] },
+                description: '[B] люрк смок на выход [Jump + Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=140'
+            },
+            {
+                id: 11,
+                coords: { lineUps: [80, 41], cloud: [37, 67] },
+                description: 'Занятие воды [Jump + Throw]',
+                side: 'ct',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=784'
+            },
+            {
+                id: 12,
+                coords: { lineUps: [80, 41], cloud: [47, 79] },
+                description: 'Занятие воды [Ctrl + Jump + Throw]',
+                side: 'ct',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=784'
+            },
+            {
+                id: 13,
+                coords: { lineUps: [68, 29], cloud: [28, 35] },
+                description: '[B] на занятие мейна [Ctrl + Jump + Throw]',
+                side: 'ct',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=652'
+            },
+            {
+                id: 14,
+                coords: { lineUps: [40, 58], cloud: [40, 39] },
+                description: '[A] на заход в кон [Throw]',
+                side: 'ct',
+                type: 'flash',
+                videoUrl: 'https://youtu.be/SWlsYC_bAlo?t=482'
+            },
+            {
+                id: 15,
+                coords: { lineUps: [34.5, 28], cloud: [49, 36] },
+                description: '[A] rain [Throw]',
+                side: 't',
+                type: 'smoke',
+                videoUrl: 'https://youtu.be/LRNkovDPEgw?t=346'
+            },
+
+        ]
+    },
     'inferno': {
         spawns: [
             { coords: [34, 21], icon: '/images/t.png' },
@@ -303,7 +432,7 @@ export const nades: Record<string, MapData> = {
                 description: "[B] отпик апсов с тачки",
                 videoUrl: "https://youtu.be/W7Qtk8x3S24?t=1342"
             },
-            
+
         ]
     }
 };
