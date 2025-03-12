@@ -229,7 +229,6 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
                         nade.description,
                         nade.videoUrl
                       );
-                      console.log(nade.id);
                     },
                   }}
                   zIndexOffset={1000}
