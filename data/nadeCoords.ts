@@ -283,11 +283,75 @@ export const nades: Record<string, MapData> = {
             {
                 id: 4,
                 coords: { lineUps: [62, 50], cloud: [72, 43] },
-                description: '[B] 3 [Throw]',
+                description: '[B] 3',
                 type: 'fire',
                 side: 't',
                 videoUrl: 'https://www.youtube.com/shorts/9R4QPvqm8PI'
-            }
+            },
+            {
+                id: 5,
+                coords: { lineUps: [58, 50], cloud: [82, 44] },
+                description: '[B] dark',
+                type: 'fire',
+                side: 't',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=310'
+            },
+            {
+                id: 6,
+                coords: { lineUps: [54, 45], cloud: [69, 56] },
+                description: '[B] выход',
+                type: 'flash',
+                side: 't',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=205'
+            },
+            {
+                id: 7,
+                coords: { lineUps: [22, 35], cloud: [24, 61] },
+                description: '[A] apps',
+                type: 'fire',
+                side: 't',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=455'
+            },
+            {
+                id: 8,
+                coords: { lineUps: [32.5, 48], cloud: [32, 63] },
+                description: '[A] ребра',
+                type: 'flash',
+                side: 't',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=455'
+            },
+            {
+                id: 9,
+                coords: { lineUps: [32, 57], cloud: [41, 76.5] },
+                description: '[A] малые пески',
+                type: 'smoke',
+                side: 't',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=758'
+            },
+            {
+                id: 10,
+                coords: { lineUps: [37, 52], cloud: [21, 76.5] },
+                description: '[A] пески',
+                type: 'smoke',
+                side: 't',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=816'
+            },
+            {
+                id: 11,
+                coords: { lineUps: [64, 78], cloud: [34.5, 50] },
+                description: '[Mid]',
+                type: 'smoke',
+                side: 'ct',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=914'
+            },
+            {
+                id: 12,
+                coords: { lineUps: [60, 73], cloud: [44, 45] },
+                description: '[B] banana',
+                type: 'smoke',
+                side: 'ct',
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=973'
+            },
         ]
     },
     'mirage': {
