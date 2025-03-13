@@ -151,22 +151,9 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
     ]).catch(error => console.error('Failed to load Leaflet or icons:', error));
   }, []);
 
-  const handleCloudClick = (
-    id: number,
-    cloudCoords: [number, number],
-    lineUpCoords: [number, number],
-    description: string,
-    videoUrl: string
-  ) => {
+  const handleCloudClick = (id: number, cloudCoords: [number, number]) => {
     setLineUpId(id);
     setLineCoordinates(cloudCoords);
-
-    if (mapRef.current && leaflet) {
-      const markerPosition = leaflet.latLng(lineUpCoords);
-      const point = mapRef.current.latLngToContainerPoint(markerPosition);
-      const position: [number, number] = [point.x, point.y - 40];
-      setPopupData({ description, videoUrl, position });
-    }
   };
 
   const handleNadeMouseOver = (
@@ -239,14 +226,7 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
             icon={getCloudImageByNadeType(nade)}
             position={nade.coords.cloud}
             eventHandlers={{
-              click: () =>
-                handleCloudClick(
-                  nade.id,
-                  nade.coords.cloud,
-                  nade.coords.lineUps,
-                  nade.description,
-                  nade.videoUrl
-                ),
+              click: () => handleCloudClick(nade.id, nade.coords.cloud),
             }}
             ref={el => {
               markerRefs.current[nade.id] = el;

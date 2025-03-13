@@ -26,14 +26,21 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target as Node)
+      ) {
         onClose();
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside, { capture: true });
+    document.addEventListener('mousedown', handleClickOutside, {
+      capture: true,
+    });
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside, { capture: true });
+      document.removeEventListener('mousedown', handleClickOutside, {
+        capture: true,
+      });
     };
   }, [onClose]);
 
@@ -57,16 +64,11 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
       }}
       onClick={onClose}
     >
-      <div
-        ref={popupRef}
-        onClick={handlePopupClick}
-      >
-        <Card 
-          className="flex flex-col gap-2 rounded-md p-2 w-full h-auto max-w-[90vw] md:max-w-[500px]"
-        >
+      <div ref={popupRef} onClick={handlePopupClick}>
+        <Card className="flex flex-col gap-2 rounded-md p-2 md:w-full w-[95vw]">
           <b className="text-lg">{description}</b>
           <iframe
-            className="w-full h-[200px] md:h-[300px]"
+            className="aspect-video w-full md:w-[500px]"
             src={getYouTubeEmbedUrl(videoUrl, type)}
             allowFullScreen
           />
