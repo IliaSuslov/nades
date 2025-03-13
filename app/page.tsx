@@ -4,7 +4,7 @@ import { ErrorMessage } from '@/components/ErrorMessage';
 import { FaceitPlayer } from '@/data/types';
 import { FaWheelchair, FaArrowDown, FaRegSadCry } from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
-import { GiPitchfork, GiStrong } from 'react-icons/gi';
+import { GiStrong } from 'react-icons/gi';
 
 import { WiFiIcon } from '@/components/WiFiIcon';
 
@@ -23,7 +23,7 @@ const team = [
       },
       {
         label: 'wi-fi enjoyer',
-        icon: <WiFiIcon />
+        icon: <WiFiIcon />,
       },
     ],
   },
@@ -54,10 +54,6 @@ const team = [
         label: 'на руле',
         icon: <FaWheelchair className="animate-spin w-5 h-5" />,
       },
-      {
-        label: 'хохол',
-        icon: <GiPitchfork className="w-5 h-5" />,
-      },
     ],
   },
   {
@@ -67,9 +63,6 @@ const team = [
       {
         label: 'потато пкшер',
         icon: <FaRegTrashCan className="w-5 h-5" />,
-      },
-      {
-        label: 'z-патриот',
       },
     ],
   },
