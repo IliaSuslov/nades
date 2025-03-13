@@ -33,7 +33,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider defaultOpen>
+          <SidebarProvider defaultOpen={false}>
             <AppSidebar />
             <main className="flex w-full">
               <SidebarTrigger />

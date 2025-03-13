@@ -1,15 +1,16 @@
 'use client';
 
 import { createPortal } from 'react-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Card } from '../ui/card';
 import { getYouTubeEmbedUrl } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface CustomPopupProps {
   description: string;
   videoUrl: string;
-  position: [number, number]; 
-  type?: string
+  position: [number, number];
+  type?: string;
   onClose: () => void;
 }
 
@@ -20,38 +21,57 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
   type,
   onClose,
 }) => {
+  const isMobile = useIsMobile();
+  const popupRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if ((event.target as HTMLElement).closest('.popup-content') === null) {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
         onClose();
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside, { capture: true });
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside, { capture: true });
     };
-  }, []);
+  }, [onClose]);
+
+  const handlePopupClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
 
   return createPortal(
     <div
-      className="popup-content"
       style={{
-        position: 'absolute',
-        left: position[0],
-        top: position[1],
+        position: isMobile ? 'fixed' : 'absolute',
+        left: isMobile ? 0 : position[0],
+        top: isMobile ? 0 : position[1],
+        width: isMobile ? '100%' : 'auto',
+        height: isMobile ? '100%' : 'auto',
         zIndex: 1000,
+        backgroundColor: isMobile ? 'rgba(0, 0, 0, 0.8)' : 'transparent',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
+      onClick={onClose}
     >
-      <Card className="flex flex-col gap-2 rounded-md p-2">
-        <b>{description}</b>
-        <iframe
-          width="400"
-          height="200"
-          src={getYouTubeEmbedUrl(videoUrl, type)}
-          allowFullScreen
-        />
-      </Card>
+      <div
+        ref={popupRef}
+        onClick={handlePopupClick}
+      >
+        <Card 
+          className="flex flex-col gap-2 rounded-md p-2 w-full h-auto max-w-[90vw] md:max-w-[500px]"
+        >
+          <b className="text-lg">{description}</b>
+          <iframe
+            className="w-full h-[200px] md:h-[300px]"
+            src={getYouTubeEmbedUrl(videoUrl, type)}
+            allowFullScreen
+          />
+        </Card>
+      </div>
     </div>,
     document.body
   );

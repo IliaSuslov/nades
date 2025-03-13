@@ -1,9 +1,7 @@
 'use client'
 
 import NadeMap from './NadeMap';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { MapData } from '@/data/types';
-import Image from 'next/image';
 
 interface MapContainerProps {
   mapImage: string;
@@ -15,8 +13,7 @@ export function MapContainer({ mapImage, mapData }: MapContainerProps) {
     <div className="flex flex-col lg:flex-row gap-4 items-start">
       <NadeMap mapImage={mapImage} mapData={mapData} />
       
-      <div className="flex flex-col gap-4">
-        {/* Toggle group for selecting sides (CT/T) */}
+      {/* <div className="flex flex-col gap-4">
         <ToggleGroup type="single" size="lg">
           <ToggleGroupItem
             value="t"
@@ -40,7 +37,6 @@ export function MapContainer({ mapImage, mapData }: MapContainerProps) {
           </ToggleGroupItem>
         </ToggleGroup>
 
-        {/* Toggle group for selecting grenade types */}
         <ToggleGroup type="single" size="lg">
           <ToggleGroupItem value="smoke" aria-label="Toggle Smoke Grenade">
             <Image
@@ -75,7 +71,7 @@ export function MapContainer({ mapImage, mapData }: MapContainerProps) {
             />
           </ToggleGroupItem>
         </ToggleGroup>
-      </div>
+      </div> */}
     </div>
   );
 }

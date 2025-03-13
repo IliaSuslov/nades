@@ -14,7 +14,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
   team,
 }) => {
   return (
-    <div className="flex items-center gap-6 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300 border border-white/10">
+    <div className="flex flex-col md:flex-row items-center gap-6 p-6 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300 border border-white/10">
       {/* Rank Circle */}
       <div className="flex items-center justify-center text-white font-bold text-xl">
         {rank}
@@ -80,8 +80,10 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
           </span>
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex gap-2">
+
+      {/* Badges Section */}
+      <div className="flex flex-col mt-4 md:mt-0">
+        <div className="flex gap-2 flex-wrap">
           {team
             .find(({ id }: { id: string }) => id === player.player_id)
             ?.badges?.map(

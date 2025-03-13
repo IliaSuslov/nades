@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import { Polyline } from 'react-leaflet';
 import { MapData, Nade } from '@/data/types';
 import CustomPopup from './CustomPopup';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface NadeMapProps {
   mapImage: string;
@@ -27,35 +28,35 @@ const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), {
 
 const cloudIconT = new L.Icon({
   iconUrl: '/images/smoke-cloud-t.svg',
-  iconRetinaUrl: '/images/smoke-cloud-t.png',
+  iconRetinaUrl: '/images/smoke-cloud-t.svg',
   popupAnchor: [0, -0],
   iconSize: [40, 40],
 });
 
 const cloudIconCT = new L.Icon({
   iconUrl: '/images/smoke-cloud-ct.svg',
-  iconRetinaUrl: '/images/smoke-cloud-ct.png',
+  iconRetinaUrl: '/images/smoke-cloud-ct.svg',
   popupAnchor: [0, -0],
   iconSize: [40, 40],
 });
 
 const fireCloud = new L.Icon({
   iconUrl: '/images/fire-cloud.svg',
-  iconRetinaUrl: '/images/fire-cloud.png',
+  iconRetinaUrl: '/images/fire-cloud.svg',
   popupAnchor: [0, -0],
   iconSize: [40, 40],
 });
 
 const flashBang = new L.Icon({
   iconUrl: '/images/flash-bang.svg',
-  iconRetinaUrl: '/images/fire-bang.png',
+  iconRetinaUrl: '/images/flash-bang.svg',
   popupAnchor: [0, -0],
   iconSize: [40, 40],
 });
 
 const heBang = new L.Icon({
   iconUrl: '/images/he-bang.svg',
-  iconRetinaUrl: '/images/he-bang.png',
+  iconRetinaUrl: '/images/he-bang.svg',
   popupAnchor: [0, -0],
   iconSize: [40, 40],
 });
@@ -166,22 +167,25 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
         return cloudIconT;
     }
   };
+
+  const mobile = useIsMobile()
+  
   return (
     <>
       <MapContainer
         ref={mapRef}
         crs={CRS.Simple}
         bounds={bounds}
-        className="max-w-[800px] max-h-[800px] min-w-[650px] w-full h-full aspect-square"
-        minZoom={3}
-        maxZoom={3}
-        zoom={3}
+        className="w-full h-auto aspect-square transition-all duration-300 z-10 lg:max-w-[800px] lg:max-h-[800px] lg:min-w-[650px]"
+        minZoom={mobile ? 2 : 3}
+        maxZoom={mobile ? 2 : 3}
+        zoom={mobile ? 2 : 3}
         zoomControl={false}
         attributionControl={false}
         doubleClickZoom={false}
         dragging={false}
       >
-        <ImageOverlay url={mapImage} bounds={bounds} />
+        <ImageOverlay className='w-full h-full' url={mapImage} bounds={bounds} />
         {mapData?.spawns?.map((s, index) => (
           <Marker
             key={index}
