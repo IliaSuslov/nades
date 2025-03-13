@@ -185,7 +185,7 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
         doubleClickZoom={false}
         dragging={false}
       >
-        <ImageOverlay className='w-full h-full' url={mapImage} bounds={bounds} />
+        <ImageOverlay url={mapImage} bounds={bounds} />
         {mapData?.spawns?.map((s, index) => (
           <Marker
             key={index}
