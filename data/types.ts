@@ -1,14 +1,6 @@
 export type Type = 'smoke' | 'he' | 'flash' | 'fire' | 'combo' | 'прострел';
 export type Side = 'ct' | 't';
 
-export interface Grenade {
-  type: Type;
-  description: string;
-  videoUrl: string;
-  side: Side
-  vidType?: 'vk'
-}
-
 export interface Nade {
   id: number;
   coords: { lineUps: [number, number]; cloud: [number, number] };
@@ -16,6 +8,7 @@ export interface Nade {
   side: 't' | 'ct';
   type: 'smoke' | 'fire' | 'flash' | 'he';
   videoUrl: string;
+  vidType?: 'vk'
 }
 
 export interface MapData {

@@ -8,7 +8,8 @@ import { Card } from '../ui/card';
 interface CustomPopupProps {
   description: string;
   videoUrl: string;
-  position: [number, number]; // Position for the popup
+  position: [number, number]; 
+  type?: string
   onClose: () => void;
 }
 
@@ -16,6 +17,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
   description,
   videoUrl,
   position,
+  type,
   onClose,
 }) => {
   useEffect(() => {
@@ -46,7 +48,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
         <iframe
           width="400"
           height="200"
-          src={getYouTubeEmbedUrl(videoUrl)}
+          src={getYouTubeEmbedUrl(videoUrl, type)}
           allowFullScreen
         />
       </Card>

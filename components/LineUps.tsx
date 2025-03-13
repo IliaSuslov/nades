@@ -10,7 +10,7 @@ interface LineUpsProps {
   side: Side;
   nade: Type;
 }
-export const getYouTubeEmbedUrl = (url: string, type?: 'vk') => {
+export const getYouTubeEmbedUrl = (url: string, type?: string) => {
   if (type === 'vk') {
     return url;
   }
@@ -45,7 +45,7 @@ export function LineUps({ map, side, nade }: LineUpsProps) {
             <CardContent>
               <iframe
                 className="w-full h-full aspect-video"
-                src={getYouTubeEmbedUrl(grenade.videoUrl)}
+                src={getYouTubeEmbedUrl(grenade.videoUrl, grenade?.vidType)}
                 title={grenade.type}
                 allowFullScreen
               />

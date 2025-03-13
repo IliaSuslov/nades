@@ -318,7 +318,7 @@ export const nades: Record<string, MapData> = {
                 description: '[A] ребра',
                 type: 'flash',
                 side: 't',
-                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=455'
+                videoUrl: 'https://youtu.be/fWDE1KH9odg?t=548'
             },
             {
                 id: 9,
@@ -751,6 +751,105 @@ export const nades: Record<string, MapData> = {
                 type: "smoke",
                 description: "[B] window",
                 videoUrl: "https://www.youtube.com/shorts/Mw4CHKzuksk?feature=share",
+            },
+        ]
+    },
+    'nuke': {
+        spawns: [
+            { coords: [46, 20], icon: '/images/t.png' },
+            { coords: [54.2, 81], icon: '/images/ct.png' }
+        ],
+        nades: [
+            {
+                id: 1,
+                coords: {
+                    lineUps: [43, 32],
+                    cloud: [34, 62]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[Outside] 3 смока top-main и стена",
+                videoUrl: "https://vk.com/video_ext.php?oid=-29058375&id=456247575&hash=8d3f1cf45956cbbe&muted=1",
+                vidType: "vk"
+            },
+            {
+                id: 2,
+                coords: {
+                    lineUps: [43, 32],
+                    cloud: [32, 66]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[Outside] 3 смока top-main и стена",
+                videoUrl: "https://vk.com/video_ext.php?oid=-29058375&id=456247575&hash=8d3f1cf45956cbbe&muted=1",
+                vidType: "vk"
+            },
+            {
+                id: 3,
+                coords: {
+                    lineUps: [43, 32],
+                    cloud: [36, 60]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[Outside] 3 смока top-main и стена",
+                videoUrl: "https://vk.com/video_ext.php?oid=-29058375&id=456247575&hash=8d3f1cf45956cbbe&muted=1",
+                vidType: "vk"
+            },
+            {
+                id: 4,
+                coords: {
+                    lineUps: [45, 45],
+                    cloud: [45, 53]
+                },
+                side: "t",
+                type: "fire",
+                description: "[A] на будку",
+                videoUrl: "https://youtu.be/6_WAimVYF0I?t=414",
+            },
+            {
+                id: 5,
+                coords: {
+                    lineUps: [39, 48],
+                    cloud: [54, 64]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[A] 9 со скалы",
+                videoUrl: "https://youtu.be/4UObn0ss2ds?t=114"
+            },
+            {
+                id: 6,
+                coords: {
+                    lineUps: [46, 36],
+                    cloud: [41, 56.5]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[A] перед мейном для спрыга в вент",
+                videoUrl: "https://youtu.be/4UObn0ss2ds?t=145"
+            },
+            {
+                id: 7,
+                coords: {
+                    lineUps: [55, 65],
+                    cloud: [55, 59]
+                },
+                side: "ct",
+                type: "flash",
+                description: "[A] c 9 на ритейк",
+                videoUrl: "https://youtu.be/6_WAimVYF0I?t=1020"
+            },
+            {
+                id: 8,
+                coords: {
+                    lineUps: [43, 73],
+                    cloud: [29, 52]
+                },
+                side: "ct",
+                type: "fire",
+                description: "[Outside] в начало на выход теров",
+                videoUrl: "https://youtu.be/6_WAimVYF0I?t=782"
             },
         ]
     }

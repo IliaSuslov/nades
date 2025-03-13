@@ -115,6 +115,7 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
     description: string;
     videoUrl: string;
     position: [number, number];
+    vidType?: string;
   } | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const markerRefs = useRef<{ [key: number]: L.Marker | null }>({});
@@ -140,13 +141,14 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
   const handleNadeMouseOver = (
     lineUpCoords: [number, number],
     description: string,
-    videoUrl: string
+    videoUrl: string,
+    vidType?: string
   ) => {
     if (mapRef.current) {
       const markerPosition = L.latLng(lineUpCoords);
       const point = mapRef.current.latLngToContainerPoint(markerPosition);
       const position: [number, number] = [point.x, point.y - 40];
-      setPopupData({ description, videoUrl, position });
+      setPopupData({ description, videoUrl, position, vidType });
     }
   };
 
@@ -227,7 +229,8 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
                       handleNadeMouseOver(
                         nade.coords.lineUps,
                         nade.description,
-                        nade.videoUrl
+                        nade.videoUrl,
+                        nade?.vidType
                       );
                     },
                   }}
@@ -254,6 +257,7 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
           <CustomPopup
             description={popupData.description}
             videoUrl={popupData.videoUrl}
+            type={popupData.vidType}
             position={popupData.position}
             onClose={() => setPopupData(null)}
           />
