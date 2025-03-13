@@ -2,8 +2,8 @@
 
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
-import { getYouTubeEmbedUrl } from '../LineUps';
 import { Card } from '../ui/card';
+import { getYouTubeEmbedUrl } from '@/lib/utils';
 
 interface CustomPopupProps {
   description: string;
