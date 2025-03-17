@@ -5,6 +5,7 @@ import nuke from './nuke.webp';
 import anubis from './anubis.webp';
 import ancient from './ancient.webp';
 import dust_2 from './dust_2.webp';
+import cache from './cache.webp';
 
 export {
     train,
@@ -14,4 +15,5 @@ export {
     anubis,
     ancient,
     dust_2,
+    cache
 }; 

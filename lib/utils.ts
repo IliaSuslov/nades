@@ -8,6 +8,7 @@ import {
   anubis,
   ancient,
   dust_2,
+  cache,
 } from '../public/images/maps'
 import {
   emb_train,
@@ -17,6 +18,7 @@ import {
   emb_anubis,
   emb_ancient,
   emb_dust_2,
+  emb_cache
 } from '../public/images/emblems'
 
 export function cn(...inputs: ClassValue[]) {
@@ -31,6 +33,7 @@ export const maps = [
   { id: 5, label: 'Ancient', value: 'ancient', icon: emb_ancient, },
   { id: 6, label: 'Nuke', value: 'nuke', icon: emb_nuke, },
   { id: 7, label: 'Inferno', value: 'inferno', icon: emb_inferno, },
+  { id: 8, label: 'Cache', value: 'cache', icon: emb_cache, new: true },
 ];
 
 export function isMapExists(map: string) {
@@ -65,6 +68,8 @@ export const getMapImage = (map: string) => {
       return anubis;
     case 'inferno':
       return inferno;
+    case 'cache':
+      return cache;
     default:
       throw new Error(`No map image for ${map}`);
   }

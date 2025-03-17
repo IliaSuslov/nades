@@ -5,6 +5,7 @@ import emb_nuke from './emb_nuke.webp';
 import emb_anubis from './emb_anubis.webp';
 import emb_ancient from './emb_ancient.webp';
 import emb_dust_2 from './emb_dust2.webp';
+import emb_cache from './emb_cache.webp';
 
 export {
     emb_train,
@@ -14,4 +15,5 @@ export {
     emb_anubis,
     emb_ancient,
     emb_dust_2,
+    emb_cache
 }; 

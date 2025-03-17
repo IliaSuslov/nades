@@ -852,5 +852,222 @@ export const nades: Record<string, MapData> = {
                 videoUrl: "https://youtu.be/6_WAimVYF0I?t=782"
             },
         ]
+    },
+    'cache': {
+        spawns: [
+            { coords: [55, 9], icon: '/images/sides/ct.png' },
+            { coords: [42, 88], icon: '/images/sides/t.png' }
+        ],
+        nades: [
+            {
+                id: 1,
+                coords: {
+                    lineUps: [66, 49],
+                    cloud: [68.5, 35.5]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[A] 3 между погрузом и сайтом",
+                videoUrl: "https://youtu.be/e30r8GfpkvE?t=17",
+            },
+            // {
+            //     id: 2,
+            //     coords: {
+            //         lineUps: [43, 32],
+            //         cloud: [65, 34.5]
+            //     },
+            //     side: "t",
+            //     type: "smoke",
+            //     description: "[A] 3 между погрузом и сайтом",
+            //     videoUrl: "",
+            // },
+            // {
+            //     id: 3,
+            //     coords: {
+            //         lineUps: [43, 32],
+            //         cloud: [70, 29.5]
+            //     },
+            //     side: "t",
+            //     type: "smoke",
+            //     description: "[A] 3 между погрузом и сайтом",
+            //     videoUrl: "",
+            // },
+            {
+                id: 4,
+                coords: {
+                    lineUps: [17, 56],
+                    cloud: [26.5, 27]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[B] CT",
+                videoUrl: "https://youtu.be/kggJ42u00wQ?t=173",
+            },
+            {
+                id: 5,
+                coords: {
+                    lineUps: [27, 54],
+                    cloud: [30, 27]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[B] 9",
+                videoUrl: "https://youtu.be/KMp_k-lE4as?t=590",
+            },
+            {
+                id: 6,
+                coords: {
+                    lineUps: [42, 82],
+                    cloud: [42, 27]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[Mid] зига",
+                videoUrl: "https://youtu.be/kggJ42u00wQ?t=15",
+            },
+            {
+                id: 7,
+                coords: {
+                    lineUps: [49, 66.5],
+                    cloud: [45.5, 43]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[Mid] левый",
+                videoUrl: "https://youtu.be/kggJ42u00wQ?t=57",
+            },
+            {
+                id: 8,
+                coords: {
+                    lineUps: [45.5, 66.5],
+                    cloud: [49.5, 43]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[Mid] правый",
+                videoUrl: "https://youtu.be/kggJ42u00wQ?t=52",
+            },
+            {
+                id: 9,
+                coords: {
+                    lineUps: [31.5, 57],
+                    cloud: [31, 40]
+                },
+                side: "t",
+                type: "smoke",
+                description: "[B] на проход",
+                videoUrl: "https://youtu.be/kggJ42u00wQ?t=157",
+            },
+            // {
+            //     id: 10,
+            //     coords: {
+            //         lineUps: [28, 62],
+            //         cloud: [36, 42]
+            //     },
+            //     side: "t",
+            //     type: "fire",
+            //     description: "[A] 3 между погрузом и сайтом",
+            //     videoUrl: "",
+            // },
+            {
+                id: 11,
+                coords: {
+                    lineUps: [16.5, 46],
+                    cloud: [17, 37]
+                },
+                side: "t",
+                type: "fire",
+                description: "[B] бексайт",
+                videoUrl: "https://youtu.be/KMp_k-lE4as?t=751",
+            },
+            {
+                id: 12,
+                coords: {
+                    lineUps: [17, 51],
+                    cloud: [20, 32]
+                },
+                side: "t",
+                type: "fire",
+                description: "[B] site",
+                videoUrl: "https://youtu.be/YoEwnPyg23Q?t=106",
+            },
+            {
+                id: 13,
+                coords: {
+                    lineUps: [17, 51],
+                    cloud: [22, 28.5]
+                },
+                side: "t",
+                type: "fire",
+                description: "[B] headshot",
+                videoUrl: "https://youtu.be/YoEwnPyg23Q?t=90",
+            },
+            {
+                id: 14,
+                coords: {
+                    lineUps: [43, 30],
+                    cloud: [53, 52]
+                },
+                side: "ct",
+                type: "fire",
+                description: "[Mid] boost",
+                videoUrl: "https://www.youtube.com/shorts/klUiRLqA4D4?feature=share",
+            },
+            {
+                id: 15,
+                coords: {
+                    lineUps: [68, 46],
+                    cloud: [67, 43]
+                },
+                side: "t",
+                type: "fire",
+                description: "[A] угол",
+                videoUrl: "https://youtu.be/KMp_k-lE4as?t=380",
+            },
+            {
+                id: 16,
+                coords: {
+                    lineUps: [68, 46],
+                    cloud: [81, 36]
+                },
+                side: "t",
+                type: "fire",
+                description: "[A] NBK",
+                videoUrl: "https://youtu.be/KMp_k-lE4as?t=360",
+            },
+            {
+                id: 17,
+                coords: {
+                    lineUps: [62, 22],
+                    cloud: [73, 46]
+                },
+                side: "ct",
+                type: "smoke",
+                description: "[A] main",
+                videoUrl: "https://youtu.be/e30r8GfpkvE?t=1",
+            },
+            {
+                id: 18,
+                coords: {
+                    lineUps: [30, 26],
+                    cloud: [29, 44]
+                },
+                side: "ct",
+                type: "smoke",
+                description: "[B] main",
+                videoUrl: "https://youtu.be/e30r8GfpkvE?t=84",
+            },
+            {
+                id: 19,
+                coords: {
+                    lineUps: [68, 26],
+                    cloud: [75, 48]
+                },
+                side: "ct",
+                type: "flash",
+                description: "[A] main",
+                videoUrl: "https://youtu.be/KMp_k-lE4as?t=33",
+            },
+        ]
     }
 };

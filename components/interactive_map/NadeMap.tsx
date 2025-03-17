@@ -152,6 +152,7 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
   }, []);
 
   const handleCloudClick = (id: number, cloudCoords: [number, number]) => {
+    console.log(id)
     setLineUpId(id);
     setLineCoordinates(cloudCoords);
   };
