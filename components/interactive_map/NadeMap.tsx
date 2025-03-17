@@ -151,8 +151,7 @@ const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
     ]).catch(error => console.error('Failed to load Leaflet or icons:', error));
   }, []);
 
-  const handleCloudClick = (id: number, cloudCoords: [number, number]) => {
-    console.log(id)
+  const handleCloudClick = (id: number, cloudCoords: [number, number]) => {    
     setLineUpId(id);
     setLineCoordinates(cloudCoords);
   };
