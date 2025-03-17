@@ -21,7 +21,7 @@ export function MapContainer({ mapImage, mapData }: MapContainerProps) {
             onClick={() => console.log('Terrorist selected')}
           >
             <Image
-              src={'/images/t.png'}
+              src={'/images/sides/t.png'}
               width={40}
               height={40}
               alt={'Terrorist Logo'}
@@ -29,7 +29,7 @@ export function MapContainer({ mapImage, mapData }: MapContainerProps) {
           </ToggleGroupItem>
           <ToggleGroupItem value="ct" aria-label="Toggle Counter-Terrorist">
             <Image
-              src={'/images/ct.png'}
+              src={'/images/sides/ct.png'}
               width={40}
               height={40}
               alt={'Counter-Terrorist Logo'}

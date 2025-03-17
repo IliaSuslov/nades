@@ -3,8 +3,8 @@ import { MapData } from "./types";
 export const nades: Record<string, MapData> = {
     'ancient': {
         spawns: [
-            { coords: [13, 48], icon: '/images/t.png' },
-            { coords: [88, 50.5], icon: '/images/ct.png' }
+            { coords: [13, 48], icon: '/images/sides/t.png' },
+            { coords: [88, 50.5], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {
@@ -123,8 +123,8 @@ export const nades: Record<string, MapData> = {
     },
     'anubis': {
         spawns: [
-            { coords: [9, 48], icon: '/images/t.png' },
-            { coords: [78, 43], icon: '/images/ct.png' }
+            { coords: [9, 48], icon: '/images/sides/t.png' },
+            { coords: [78, 43], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {
@@ -252,8 +252,8 @@ export const nades: Record<string, MapData> = {
     },
     'inferno': {
         spawns: [
-            { coords: [34, 21], icon: '/images/t.png' },
-            { coords: [63, 77.5], icon: '/images/ct.png' }
+            { coords: [34, 21], icon: '/images/sides/t.png' },
+            { coords: [63, 77.5], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {
@@ -356,8 +356,8 @@ export const nades: Record<string, MapData> = {
     },
     'mirage': {
         spawns: [
-            { coords: [65, 88], icon: '/images/t.png' },
-            { coords: [30, 30], icon: '/images/ct.png' }
+            { coords: [65, 88], icon: '/images/sides/t.png' },
+            { coords: [30, 30], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {
@@ -484,8 +484,8 @@ export const nades: Record<string, MapData> = {
     },
     'train': {
         spawns: [
-            { coords: [83, 13], icon: '/images/t.png' },
-            { coords: [20, 90], icon: '/images/ct.png' }
+            { coords: [83, 13], icon: '/images/sides/t.png' },
+            { coords: [20, 90], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {
@@ -588,8 +588,8 @@ export const nades: Record<string, MapData> = {
     },
     'dust_2': {
         spawns: [
-            { coords: [10, 40], icon: '/images/t.png' },
-            { coords: [80, 61], icon: '/images/ct.png' }
+            { coords: [10, 40], icon: '/images/sides/t.png' },
+            { coords: [80, 61], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {
@@ -756,8 +756,8 @@ export const nades: Record<string, MapData> = {
     },
     'nuke': {
         spawns: [
-            { coords: [46, 20], icon: '/images/t.png' },
-            { coords: [54.2, 81], icon: '/images/ct.png' }
+            { coords: [46, 20], icon: '/images/sides/t.png' },
+            { coords: [54.2, 81], icon: '/images/sides/ct.png' }
         ],
         nades: [
             {

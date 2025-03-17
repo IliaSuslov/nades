@@ -9,19 +9,28 @@ import {
   ancient,
   dust_2,
 } from '../public/images/maps'
+import {
+  emb_train,
+  emb_mirage,
+  emb_inferno,
+  emb_nuke,
+  emb_anubis,
+  emb_ancient,
+  emb_dust_2,
+} from '../public/images/emblems'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
 export const maps = [
-  { id: 1, label: 'Dust II', value: 'dust_2' },
-  { id: 2, label: 'Mirage', value: 'mirage' },
-  { id: 3, label: 'Train', value: 'train' },
-  { id: 4, label: 'Anubis', value: 'anubis' },
-  { id: 5, label: 'Ancient', value: 'ancient' },
-  { id: 6, label: 'Nuke', value: 'nuke' },
-  { id: 7, label: 'Inferno', value: 'inferno' },
+  { id: 1, label: 'Dust II', value: 'dust_2', icon: emb_dust_2 },
+  { id: 2, label: 'Mirage', value: 'mirage', icon: emb_mirage, },
+  { id: 3, label: 'Train', value: 'train', icon: emb_train, },
+  { id: 4, label: 'Anubis', value: 'anubis', icon: emb_anubis, },
+  { id: 5, label: 'Ancient', value: 'ancient', icon: emb_ancient, },
+  { id: 6, label: 'Nuke', value: 'nuke', icon: emb_nuke, },
+  { id: 7, label: 'Inferno', value: 'inferno', icon: emb_inferno, },
 ];
 
 export function isMapExists(map: string) {

@@ -11,6 +11,7 @@ import {
 import { maps } from '@/lib/utils';
 import Link from 'next/link';
 import { ModeToggle } from './theme_trigger';
+import Image from 'next/image';
 
 export function AppSidebar() {
   return (
@@ -33,7 +34,15 @@ export function AppSidebar() {
                   <SidebarMenuItem key={item.id}>
                     <Link href={`/${item.value}`} className="text-md font-bold">
                       <SidebarMenuButton asChild>
-                        <span key={item.id}>{item.label}</span>
+                        <span key={item.id}>
+                          <Image
+                            src={item.icon}
+                            width={30}
+                            height={30}
+                            alt="emblem"
+                          />
+                          {item.label}
+                        </span>
                       </SidebarMenuButton>
                     </Link>
                   </SidebarMenuItem>
