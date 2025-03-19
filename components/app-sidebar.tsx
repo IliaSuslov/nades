@@ -12,6 +12,7 @@ import { maps } from '@/lib/utils';
 import Link from 'next/link';
 import { ModeToggle } from './theme_trigger';
 import Image from 'next/image';
+import { Badge } from './Badge';
 
 export function AppSidebar() {
   return (
@@ -47,18 +48,7 @@ export function AppSidebar() {
                           {item.label}
                         </span>
                       </SidebarMenuButton>
-                      {item.new && (
-                        <span
-                          className="ml-2 items-center gap-2 px-2 py-1 rounded-full 
-                          bg-gradient-to-r from-red-500/20 to-orange-500/20 
-                          border border-red-500/30 
-                          text-red-400 text-xs font-semibold
-                          shadow-lg shadow-red-500/10
-                          backdrop-blur-sm"
-                        >
-                          NEW
-                        </span>
-                      )}
+                      {item.new && <Badge>NEW</Badge>}
                     </Link>
                   </SidebarMenuItem>
                 ))}

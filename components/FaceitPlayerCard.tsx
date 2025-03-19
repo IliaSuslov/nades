@@ -1,6 +1,7 @@
 import { FaceitPlayer } from '@/data/types';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
+import { Badge } from './Badge';
 
 interface FaceitPlayerCardProps {
   player: FaceitPlayer;
@@ -46,7 +47,7 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
                 fill="none"
                 strokeWidth="2.5"
                 stroke="currentColor"
-                className='text-red-600'
+                className="text-red-600"
                 strokeDasharray={`${
                   (player.games.cs2.skill_level / 10) * 62.83
                 } 62.83`}
@@ -91,22 +92,12 @@ export const FaceitPlayerCard: FC<FaceitPlayerCardProps> = ({
                 badge: { icon?: React.ReactNode; label: string },
                 index: number
               ) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full 
-                  bg-gradient-to-r from-red-500/20 to-orange-500/20 
-                  border border-red-500/30 
-                  text-red-400 text-xs font-semibold
-                  shadow-lg shadow-red-500/10
-                  backdrop-blur-sm
-                  transition-all duration-300
-                  hover:from-red-500/30 hover:to-orange-500/30
-                  hover:border-red-500/40
-                  hover:scale-105"
-                >
-                  {badge.icon && badge.icon}
-                  {badge.label.toUpperCase()}
-                </span>
+                <Badge key={index}>
+                  <div className="flex flex-row items-center gap-2">
+                    {badge.icon && badge.icon}
+                    {badge.label.toUpperCase()}
+                  </div>
+                </Badge>
               )
             )}
         </div>

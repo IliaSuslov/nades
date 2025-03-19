@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import { useRef, useState, useEffect } from 'react';
-import { Polyline } from 'react-leaflet';
 import { MapData, Nade } from '@/data/types';
 import CustomPopup from './CustomPopup';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -31,6 +30,9 @@ const ImageOverlay = dynamic(
   { ssr: false }
 );
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), {
+  ssr: false,
+});
+const Polyline = dynamic(() => import('react-leaflet').then(mod => mod.Polyline), {
   ssr: false,
 });
 

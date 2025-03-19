@@ -80,6 +80,7 @@ async function getFaceitPlayer(id: string): Promise<FaceitPlayer> {
         Authorization: `Bearer ${FACEIT_API_KEY}`,
         'Content-Type': 'application/json',
       },
+      cache: 'no-cache',
       next: { revalidate: CACHE_REVALIDATION_TIME },
     });
 
