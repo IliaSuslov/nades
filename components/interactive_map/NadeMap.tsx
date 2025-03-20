@@ -8,7 +8,6 @@ import CustomPopup from './CustomPopup';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Marker as LeafletMarker, Icon as LeafletIcon } from 'leaflet';
 
-// Define a type for the icons
 interface Icons {
   cloudIconT: LeafletIcon;
   cloudIconCT: LeafletIcon;
@@ -19,6 +18,11 @@ interface Icons {
   fireIcon: LeafletIcon;
   flashIcon: LeafletIcon;
   heIcon: LeafletIcon;
+}
+
+interface NadeMapProps {
+  mapImage: string;
+  mapData?: MapData;
 }
 
 const MapContainer = dynamic(
@@ -119,11 +123,6 @@ const bounds: [[number, number], [number, number]] = [
   [0, 0],
   [100, 100],
 ];
-
-interface NadeMapProps {
-  mapImage: string;
-  mapData?: MapData;
-}
 
 const NadeMap: React.FC<NadeMapProps> = ({ mapImage, mapData }) => {
   const [lineUpsById, setLineUpId] = useState<number | null>(null);
