@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.mjs & next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "node server.mjs & next start",
     "lint": "next lint"
   },
   "dependencies": {
