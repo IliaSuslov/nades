@@ -11,7 +11,7 @@ const VisitorCounter = () => {
 
   useEffect(() => {
     const socket = io(
-      !dev ? process.env.NEXT_PUBLIC_SOCKET_URL : 'http://localhost:8080'
+      !dev ? process.env.NEXT_PUBLIC_FRONTEND_URL: 'http://localhost:8080'
     );
 
     socket.on('visitorCountUpdate', data => {
