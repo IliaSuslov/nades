@@ -4,15 +4,11 @@ import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { FaUser } from 'react-icons/fa';
 
-const dev = process.env.NODE_ENV !== 'production';
-
 const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io(
-      !dev ? process.env.NEXT_PUBLIC_FRONTEND_URL: 'http://localhost:8080'
-    );
+    const socket = io('http://localhost:8080');
 
     socket.on('visitorCountUpdate', data => {
       setVisitorCount(data.count);
