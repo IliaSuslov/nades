@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { ModeToggle } from './theme_trigger';
 import Image from 'next/image';
 import { Badge } from './Badge';
+import VisitorCounter from './visitor_count';
 
 export function AppSidebar() {
   return (
@@ -52,6 +53,7 @@ export function AppSidebar() {
                     </Link>
                   </SidebarMenuItem>
                 ))}
+                <VisitorCounter />
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
