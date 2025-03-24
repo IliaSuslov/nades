@@ -14,7 +14,7 @@ app.prepare().then(() => {
 
     const io = new Server(server, {
         cors: {
-            origin: !dev ? process.env.NEXT_PUBLIC_FRONTEND_URL : "http://localhost:3000",
+            origin: !dev ? "http://localhost:10000" : "http://localhost:3000",
             methods: ["GET", "POST"],
             allowedHeaders: ["my-custom-header"],
             credentials: true
