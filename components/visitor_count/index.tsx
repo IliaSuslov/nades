@@ -8,7 +8,7 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io();
+    const socket = io('https://nades.onrender.com');
 
     socket.on('visitorCountUpdate', data => {
       setVisitorCount(data.count);
