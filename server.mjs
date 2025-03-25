@@ -16,7 +16,6 @@ app.prepare().then(() => {
         cors: {
             origin: "https://nades.onrender.com",
             methods: ["GET", "POST"],
-            allowedHeaders: ["my-custom-header"],
             credentials: true
         }
     });
