@@ -16,7 +16,7 @@ app.prepare().then(() => {
 
     const io = new Server(server, {
         cors: {
-            origin: !dev ? "http://localhost:10000" : "http://localhost:3000",
+            origin: "http://10.201.48.45:10000",
             methods: ["GET", "POST"],
             allowedHeaders: ["my-custom-header"],
             credentials: true

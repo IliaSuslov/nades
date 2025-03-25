@@ -8,7 +8,7 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io('http://localhost:8080');
+    const socket = io('http://10.201.48.45:8080');
 
     socket.on('visitorCountUpdate', data => {
       setVisitorCount(data.count);
