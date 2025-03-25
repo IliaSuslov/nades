@@ -38,8 +38,8 @@ app.prepare().then(() => {
         io.emit('visitorCountUpdate', message);
     }
 
-    server.listen(8080, (err) => {
+    server.listen(process.env.NEXT_PUBLIC_PORT, (err) => {
         if (err) throw err;
-        console.log('> Сервер запущен на 8080 порте');
+        console.log(`Сервер запущен на ${process.env.NEXT_PUBLIC_PORT} порте`);
     });
 });

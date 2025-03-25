@@ -8,7 +8,7 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io('https://nades.onrender.com:8080');
+    const socket = io(`https://0.0.0.0:${process.env.NEXT_PUBLIC_PORT}`);
 
     socket.on('visitorCountUpdate', data => {
       setVisitorCount(data.count);
