@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 let activeConnections = 0;
+
+console.log(1, dev, process.env.NODE_ENV)
 app.prepare().then(() => {
 
     const server = createServer((req, res) => {
@@ -41,6 +43,6 @@ app.prepare().then(() => {
 
     server.listen(8080, (err) => {
         if (err) throw err;
-        console.log('> Сервер запущен на http://localhost:8080');
+        console.log('> Сервер запущен на 8080 порте');
     });
 });
