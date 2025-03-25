@@ -7,16 +7,14 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 let activeConnections = 0;
 
-console.log(1, dev, process.env.NODE_ENV)
 app.prepare().then(() => {
     const server = createServer((req, res) => {
-        console.log(2, req, res)
         return handle(req, res);
     });
 
     const io = new Server(server, {
         cors: {
-            origin: "https://10.201.48.45:10000",
+            origin: "https://nades.onrender.com",
             methods: ["GET", "POST"],
             allowedHeaders: ["my-custom-header"],
             credentials: true
