@@ -9,8 +9,8 @@ let activeConnections = 0;
 
 console.log(1, dev, process.env.NODE_ENV)
 app.prepare().then(() => {
-
     const server = createServer((req, res) => {
+        console.log(2, req, res)
         return handle(req, res);
     });
 
