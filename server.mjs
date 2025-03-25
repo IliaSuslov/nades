@@ -14,7 +14,7 @@ app.prepare().then(() => {
 
     const io = new Server(server, {
         cors: {
-            origin: "0.0.0.0:10000",
+            origin: "*",
             methods: ["GET", "POST"],
             credentials: true
         }
