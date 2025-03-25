@@ -14,7 +14,7 @@ app.prepare().then(() => {
 
     const io = new Server(server, {
         cors: {
-            origin: "*",
+            origin: "https://nades.onrender.com",
             methods: ["GET", "POST"],
             credentials: true
         }
