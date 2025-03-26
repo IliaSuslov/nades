@@ -10,14 +10,19 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io(dev ? "http://localhost:3000" : 'https://nades.onrender.com', {
-      transports: ['websocket', 'polling'],
-      secure: true,
-    });
-
+    const socket = io(
+      dev ? 'http://localhost:3000' : 'https://nades.onrender.com',
+      {
+        transports: ['websocket', 'polling'],
+        secure: true,
+      }
+    );
+    console.log(dev, socket);
     socket.on('connect', () => console.log('Connected to server'));
-    socket.on('connect_error', (err) => console.error('Connection error:', err.message));
-    socket.on('visitorCountUpdate', (data) => {
+    socket.on('connect_error', err =>
+      console.error('Connection error:', err.message)
+    );
+    socket.on('visitorCountUpdate', data => {
       console.log('Visitor count:', data);
       setVisitorCount(data.count);
     });
