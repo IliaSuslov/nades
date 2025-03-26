@@ -12,7 +12,7 @@ app.prepare().then(() => {
 
   const io = new Server(server, {
     cors: {
-      origin: dev ? '*' : 'https://nades.onrender.com', // Разрешить все в dev, только ваш домен в прод
+      origin: dev ? '*' : 'https://nades.onrender.com',
       methods: ['GET', 'POST'],
     },
     transports: ['websocket', 'polling'],
@@ -35,7 +35,7 @@ app.prepare().then(() => {
     io.emit('visitorCountUpdate', message);
   }
 
-  const port = process.env.PORT || 3000; // Render.com задает PORT, локально 3000
+  const port = process.env.PORT || 3000;
   server.listen(port, (err) => {
     if (err) throw err;
     console.log(`Server ready on port ${port}`);

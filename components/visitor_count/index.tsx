@@ -12,7 +12,7 @@ const VisitorCounter = () => {
   useEffect(() => {
     const socket = io(dev ? 'http://localhost:3000' : 'https://nades.onrender.com', {
       transports: ['websocket', 'polling'],
-      secure: !dev, // HTTPS только в продакшене
+      secure: !dev,
     });
 
     // console.log('Dev mode:', dev, 'Socket initialized:', socket);
