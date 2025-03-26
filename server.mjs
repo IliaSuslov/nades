@@ -3,9 +3,9 @@ import next from "next";
 import { Server } from "socket.io";
 
 const dev = process.env.NODE_ENV !== 'production';
-const hostname = dev ? "localhost" : "http://10.201.54.158"
-const port = dev ? "3000" : "8080"
-const app = next({ dev, hostname, port });
+// const hostname = dev ? "localhost" : "http://10.201.54.158"
+// const port = dev ? "3000" : "8080"
+const app = next({ dev });
 const handler = app.getRequestHandler();
 let activeConnections = 0;
 
@@ -40,6 +40,6 @@ app.prepare().then(() => {
 
     server.listen(port, (err) => {
         if (err) throw err;
-        console.log(`Ready on http://${hostname}:${port}`);
+        console.log(`Ready on port ${port}`);
     });
 });
