@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { FaUser } from 'react-icons/fa';
 
-const dev = process.env.NODE_ENV !== 'production';
-const socketURL = '0.0.0.0:8080'
 const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
