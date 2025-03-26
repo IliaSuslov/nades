@@ -8,35 +8,36 @@ const handler = app.getRequestHandler();
 let activeConnections = 0;
 
 app.prepare().then(() => {
-    const server = createServer(handler);
+  const server = createServer(handler);
 
-    const io = new Server(server, {
-        cors: {
-            origin: dev ? '*' : 'https://nades.onrender.com',
-            methods: ['GET', 'POST'],
-        },
-        transports: ['websocket', 'polling'],
+  const io = new Server(server, {
+    cors: {
+      origin: dev ? '*' : 'https://nades.onrender.com', // Разрешить все в dev, только ваш домен в прод
+      methods: ['GET', 'POST'],
+    },
+    transports: ['websocket', 'polling'],
+  });
+
+  io.on('connection', (socket) => {
+    console.log('New client connected:', socket.id);
+    activeConnections++;
+    broadcastActiveConnections();
+
+    socket.on('disconnect', () => {
+      console.log('Client disconnected:', socket.id);
+      activeConnections--;
+      broadcastActiveConnections();
     });
+  });
 
-    io.on('connection', (socket) => {
-        console.log('New client connected:', socket.id);
-        activeConnections++;
-        broadcastActiveConnections();
+  function broadcastActiveConnections() {
+    const message = { count: activeConnections };
+    io.emit('visitorCountUpdate', message);
+  }
 
-        socket.on('disconnect', () => {
-            console.log('Client disconnected:', socket.id);
-            activeConnections--;
-            broadcastActiveConnections();
-        });
-    });
-
-    function broadcastActiveConnections() {
-        const message = { count: activeConnections };
-        io.emit('visitorCountUpdate', message);
-    }
-
-    server.listen(dev ? 8080 : 3584, (err) => {
-        if (err) throw err;
-        console.log(`Ready on port ${dev ? 8080 : 3584}`);
-    });
+  const port = process.env.PORT || 3000; // Render.com задает PORT, локально 3000
+  server.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`Server ready on port ${port}`);
+  });
 });
