@@ -9,14 +9,14 @@ const VisitorCounter = () => {
 
   useEffect(() => {
     const socket = io('https://nades.onrender.com', {
-      path: '/socket.io', // Default path for Socket.IO
-      transports: ['polling', 'websocket'], // Force WebSocket transport
-      secure: true, // Ensure secure connection
+      transports: ['websocket', 'polling'],
+      secure: true,
     });
 
-    console.log({ socket });
-
-    socket.on('visitorCountUpdate', data => {
+    socket.on('connect', () => console.log('Connected to server'));
+    socket.on('connect_error', (err) => console.error('Connection error:', err.message));
+    socket.on('visitorCountUpdate', (data) => {
+      console.log('Visitor count:', data);
       setVisitorCount(data.count);
     });
 
@@ -32,7 +32,7 @@ const VisitorCounter = () => {
         <h1 className="text-2xl font-bold">{visitorCount}</h1>
       </div>
       <div className="flex flex-row items-center gap-2">
-        <div className=" animate-pulse bg-green-500 w-2 h-2 rounded-md"></div>
+        <div className="animate-pulse bg-green-500 w-2 h-2 rounded-md"></div>
         <p className="text-sm text-gray-400">Online users count</p>
       </div>
     </div>
