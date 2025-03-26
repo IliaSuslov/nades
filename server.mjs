@@ -10,8 +10,14 @@ let activeConnections = 0;
 app.prepare().then(() => {
     const server = createServer(handler);
 
-    const io = new Server(server);
-
+    const io = new Server(server, {
+        cors: {
+          origin: "*", // Allow all origins (adjust for production)
+          methods: ["GET", "POST"],
+        },
+        transports: ['websocket'], // Force WebSocket transport
+      });
+    
     io.on('connection', (socket) => {
         console.log('Новый клиент подключен:', socket.id);
 

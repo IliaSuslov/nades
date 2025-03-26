@@ -8,7 +8,12 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io();
+    const socket = io('https://nades.onrender.com', {
+      path: '/socket.io', // Default path for Socket.IO
+      transports: ['websocket'], // Force WebSocket transport
+      secure: true, // Ensure secure connection
+    });
+
     console.log({ socket });
 
     socket.on('visitorCountUpdate', data => {
