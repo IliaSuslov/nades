@@ -8,10 +8,9 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io(window.location.origin, {
-      path: '/socket.io', // Default path for Socket.IO
-      transports: ['websocket'], // Ensure WebSocket is used
-    });
+    const socket = io();
+    console.log(window.location.host);
+    console.log({ socket });
 
     socket.on('visitorCountUpdate', data => {
       setVisitorCount(data.count);

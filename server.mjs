@@ -3,18 +3,18 @@ import next from "next";
 import { Server } from "socket.io";
 
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
-const handle = app.getRequestHandler();
+const hostname = dev ? "localhost" : "http://10.201.54.158"
+const port = dev ? "3000" : "10000"
+const app = next({ dev, hostname, port });
+const handler = app.getRequestHandler();
 let activeConnections = 0;
 
 app.prepare().then(() => {
-    const server = createServer((req, res) => {
-        return handle(req, res);
-    });
+    const server = createServer(handler);
 
     const io = new Server(server, {
         cors: {
-            origin: "*",
+            origin: "https://nades.onrender.com",
             methods: ["GET", "POST"],
             credentials: true
         }
@@ -38,8 +38,8 @@ app.prepare().then(() => {
         io.emit('visitorCountUpdate', message);
     }
 
-    server.listen(process.env.NEXT_PUBLIC_PORT, (err) => {
+    server.listen(port, (err) => {
         if (err) throw err;
-        console.log(`Сервер запущен на ${process.env.NEXT_PUBLIC_PORT} порте`);
+        console.log(`Ready on http://${hostname}:${port}`);
     });
 });
