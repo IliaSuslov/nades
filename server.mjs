@@ -32,6 +32,6 @@ app.prepare().then(() => {
 
     server.listen(8080, (err) => {
         if (err) throw err;
-        console.log(`Ready on port ${port}`);
+        console.log(`Ready on port 8080`);
     });
 });
