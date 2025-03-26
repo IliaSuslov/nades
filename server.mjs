@@ -35,8 +35,8 @@ app.prepare().then(() => {
         io.emit('visitorCountUpdate', message);
     }
 
-    server.listen(3584, (err) => {
+    server.listen(dev ? 8080 : 3584, (err) => {
         if (err) throw err;
-        console.log(`Ready on port ${3584}`);
+        console.log(`Ready on port ${dev ? 8080 : 3584}`);
     });
 });

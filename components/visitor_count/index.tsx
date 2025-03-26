@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { FaUser } from 'react-icons/fa';
 
+const dev = process.env.NODE_ENV !== 'production';
+
 const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io('0.0.0.0:3584', {
+    const socket = io(dev ? "http://localhost:3000" : 'https://nades.onrender.com', {
       transports: ['websocket', 'polling'],
       secure: true,
     });
