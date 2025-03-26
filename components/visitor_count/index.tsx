@@ -5,12 +5,12 @@ import { io } from 'socket.io-client';
 import { FaUser } from 'react-icons/fa';
 
 const dev = process.env.NODE_ENV !== 'production';
-const socketURL = dev ? 'http://localhost:3000' : 'http://0.0.0.0:8080'
+const socketURL = '0.0.0.0:8080'
 const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io(socketURL);
+    const socket = io();
     console.log({ socket });
 
     socket.on('visitorCountUpdate', data => {

@@ -10,13 +10,7 @@ let activeConnections = 0;
 app.prepare().then(() => {
     const server = createServer(handler);
 
-    const io = new Server(server, {
-        cors: {
-            origin: "https://nades.onrender.com",
-            methods: ["GET", "POST"],
-            credentials: true
-        }
-    });
+    const io = new Server(server);
 
     io.on('connection', (socket) => {
         console.log('Новый клиент подключен:', socket.id);
