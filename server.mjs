@@ -3,8 +3,6 @@ import next from "next";
 import { Server } from "socket.io";
 
 const dev = process.env.NODE_ENV !== 'production';
-// const hostname = dev ? "localhost" : "http://10.201.54.158"
-const port = dev ? "3000" : process.env.PORT
 const app = next({ dev });
 const handler = app.getRequestHandler();
 let activeConnections = 0;
@@ -38,7 +36,7 @@ app.prepare().then(() => {
         io.emit('visitorCountUpdate', message);
     }
 
-    server.listen(port, (err) => {
+    server.listen(8080, (err) => {
         if (err) throw err;
         console.log(`Ready on port ${port}`);
     });
