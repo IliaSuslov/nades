@@ -12,7 +12,7 @@ app.prepare().then(() => {
 
     const io = new Server(server, {
         cors: {
-          origin: "*", // Allow all origins (adjust for production)
+          origin: "https://nades.onrender.com", // Allow all origins (adjust for production)
           methods: ["GET", "POST"],
         },
         transports: ['websocket'], // Force WebSocket transport

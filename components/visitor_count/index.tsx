@@ -10,7 +10,7 @@ const VisitorCounter = () => {
   useEffect(() => {
     const socket = io('https://nades.onrender.com', {
       path: '/socket.io', // Default path for Socket.IO
-      transports: ['websocket'], // Force WebSocket transport
+      transports: ['polling', 'websocket'], // Force WebSocket transport
       secure: true, // Ensure secure connection
     });
 
