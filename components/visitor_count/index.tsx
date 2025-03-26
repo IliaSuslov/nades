@@ -8,7 +8,7 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    const socket = io('https://nades.onrender.com', {
+    const socket = io('0.0.0.0:3584', {
       transports: ['websocket', 'polling'],
       secure: true,
     });
