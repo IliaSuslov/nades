@@ -15,7 +15,7 @@ const VisitorCounter = () => {
       secure: !dev, // HTTPS только в продакшене
     });
 
-    console.log('Dev mode:', dev, 'Socket initialized:', socket);
+    // console.log('Dev mode:', dev, 'Socket initialized:', socket);
 
     socket.on('connect', () => console.log('Connected to server'));
     socket.on('connect_error', (err) => console.error('Connection error:', err.message));
