@@ -7,6 +7,7 @@ import { FaRegTrashCan } from 'react-icons/fa6';
 import { GiStrong } from 'react-icons/gi';
 
 import { WiFiIcon } from '@/components/WiFiIcon';
+import { Carousel } from '@/components/carousel';
 
 const FACEIT_API_KEY = process.env.NEXT_PUBLIC_FACEIT_API_KEY;
 const FACEIT_API_URL = process.env.NEXT_FACEIT_API_URL;
@@ -142,41 +143,45 @@ const Home: FC = async () => {
 
   return (
     <main className="min-h-full bg-[length:400%_400%] inset-0 animate-gradient bg-gradient-to-br from-orange-900 via-gray-900 to-orange-900 text-white">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-            Моя команда (помогите)
-          </h1>
+      <div className="flex px-5 py-2">
+        <div>
+          <div className="mb-8 text-center">
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+              Моя команда (помогите)
+            </h1>
 
-          {failedPlayersCount > 0 && (
-            <p className="text-yellow-400 text-sm">
-              {`Warning: Failed to load ${failedPlayersCount} player(s)`}
-            </p>
-          )}
-        </div>
+            {failedPlayersCount > 0 && (
+              <p className="text-yellow-400 text-sm">
+                {`Warning: Failed to load ${failedPlayersCount} player(s)`}
+              </p>
+            )}
+          </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
-          {successfulPlayers.map((result, index) => (
-            <div key={result.value.player_id}>
-              {index > 3 && (
-                <div className="flex flex-col items-center py-4">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 rounded-full border border-red-500/20 backdrop-blur-sm">
-                    <p className="text-red-400 font-bold tracking-wider uppercase text-sm">
-                      Нелюдь
-                    </p>
-                    <FaArrowDown className="text-red-400 w-5 h-5 animate-bounce" />
+          <div className="max-w-3xl mx-auto space-y-4">
+            {successfulPlayers.map((result, index) => (
+              <div key={result.value.player_id}>
+                {index > 3 && (
+                  <div className="flex flex-col items-center py-4">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 rounded-full border border-red-500/20 backdrop-blur-sm">
+                      <p className="text-red-400 font-bold tracking-wider uppercase text-sm">
+                        Нелюдь
+                      </p>
+                      <FaArrowDown className="text-red-400 w-5 h-5 animate-bounce" />
+                    </div>
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent mt-4" />
                   </div>
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent mt-4" />
-                </div>
-              )}
-              <FaceitPlayerCard
-                player={result.value}
-                rank={index + 1}
-                team={team}
-              />
-            </div>
-          ))}
+                )}
+                <FaceitPlayerCard
+                  player={result.value}
+                  rank={index + 1}
+                  team={team}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+
+        <Carousel items={successfulPlayers} />
       </div>
     </main>
   );

@@ -23,6 +23,7 @@ export interface FaceitPlayer {
   player_id: string;
   nickname: string;
   avatar: string;
+  cover_image?: string;
   country: string;
   games: {
     cs2: {

@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
         pathname: "/images/**",
         port: ''
       },
+      {
+        protocol: "https",
+        hostname: "assets.faceit-cdn.net",
+        pathname: "/users_covers/**",
+        port: ''
+      },
     ]
   }
 };
