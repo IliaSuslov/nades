@@ -143,7 +143,7 @@ const Home: FC = async () => {
 
   return (
     <main className="min-h-full bg-[length:400%_400%] inset-0 animate-gradient bg-gradient-to-br from-orange-900 via-gray-900 to-orange-900 text-white">
-      <div className="flex px-5 py-2">
+      <div className="flex flex-col px-5 py-2 md:flex-row">
         <div>
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
